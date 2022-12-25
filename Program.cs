@@ -13,12 +13,17 @@
 
 void ShowArray (string [] array)
 {   
-    Console.Write("[");
-    for (int i = 0; i < array.Length; i++)
+    if (array.Length > 0)
     {
-        Console.Write ($"\"{array[i]}\", ");
+        Console.Write("[");
+        for (int i = 0; i < array.Length; i++)
+        {
+            Console.Write ($"\"{array[i]}\", ");
+        }
+        Console.WriteLine("\b\b]");
     }
-    Console.WriteLine("\b\b]");
+    else
+    Console.Write("[]");
 }
 
 string [] CreatArray3simbol (string [] array)
