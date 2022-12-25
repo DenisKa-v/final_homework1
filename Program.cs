@@ -16,7 +16,7 @@ void ShowArray (string [] array)
     Console.Write("[");
     for (int i = 0; i < array.Length; i++)
     {
-        Console.Write ($"{array[i]}, ");
+        Console.Write ($"\"{array[i]}\", ");
     }
     Console.WriteLine("\b\b]");
 }
@@ -45,13 +45,26 @@ string [] CreatArray3simbol (string [] array)
             series += 1;
         }
     }
-    return array;
+    return newArray;
 }
 
 Console.Write ("Нow many elements of array you enter: ");
-int el = Convert.ToInt32 (Console.ReadLine());
 
-string [] inputArray = CreatInputArray (el);
+int num;
+while (true)
+{
+    string elem = Console.ReadLine();
+
+    if (int.TryParse(elem, out num) && num > 0)
+        break;
+    else
+    {
+        Console.WriteLine("[ERROR]: Invalid input");
+        Console.Write("Retry write number greater than zero: ");
+    }
+}
+
+string [] inputArray = CreatInputArray (num);
 
 Console.Write("Input array: ");
 ShowArray (inputArray);
