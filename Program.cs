@@ -5,7 +5,7 @@
     for (int i = 0; i < size; i++)
     {
         Console.Write ($"Input element ({size-i} attempts left): ");
-        string element = Console.ReadLine();
+        string element = Console.ReadLine()!;
         array [i] = element;
     }
     return array;
@@ -58,7 +58,7 @@ Console.Write ("Нow many elements of array you enter: ");
 int num;
 while (true)
 {
-    string elem = Console.ReadLine();
+    string elem = Console.ReadLine()!;
 
     if (int.TryParse(elem, out num) && num > 0)
         break;
