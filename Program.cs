@@ -21,7 +21,7 @@ void ShowArray (string [] array)
     Console.WriteLine("\b\b]");
 }
 
-void CreatArray3simbol (string [] array)
+string [] CreatArray3simbol (string [] array)
 {
     int size = 0;
     for (int i = 0; i < array.Length; i++)
@@ -45,8 +45,7 @@ void CreatArray3simbol (string [] array)
             series += 1;
         }
     }
-    ShowArray (newArray);
-    //return array;
+    return array;
 }
 
 Console.Write ("Нow many elements of array you enter: ");
@@ -57,5 +56,7 @@ string [] inputArray = CreatInputArray (el);
 Console.Write("Input array: ");
 ShowArray (inputArray);
 
+string [] outputArray = CreatArray3simbol (inputArray);
+
 Console.Write("Output array: ");
-CreatArray3simbol (inputArray);
+ShowArray (outputArray);
