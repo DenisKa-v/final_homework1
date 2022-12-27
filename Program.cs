@@ -38,16 +38,13 @@ string [] CreatArray3simbol (string [] array)
     }
 
     string [] newArray = new string [size];
-    int series = 0;
+    int index = 0;
     for (int i = 0; i < array.Length; i++)
     {
         if (array [i].Length < 4)
         {
-            for (int j = 0 + series; j < size; j++)
-            {
-                newArray [j] = array [i];
-            }
-            series += 1;
+            newArray [index] = array [i];
+            index += 1;
         }
     }
     return newArray;
